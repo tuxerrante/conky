@@ -45,7 +45,7 @@ ${color}Date: ${color white}${time %A,%d %B}
 ${color}Time: ${color white}${time %k:%M}${alignr}${color}Uptime: ${color white}$uptime
 $color$stippled_hr
 ${alignc}CPU
-#  if your system doesn't support hwmon: ${alignc}CPU: ${color white}${i2c 9191-0290 temp 2}°C$color - MB: ${color white}${i2c 9191-0290 temp 1}°C
+#  ${alignc}CPU: ${color white}${i2c 9191-0290 temp 2}°C$color - MB: ${color white}${i2c 9191-0290 temp 1}°C
 GHz : ${color white}${freq_g 1} ${freq_g 2} ${freq_g 3} ${freq_g 4}
 ${color}Temp: ${color white}${hwmon temp 1}°C ${hwmon temp 2}°C
 #${color}MB: ${color white}${i2c 9191-0290 temp 1}°C
@@ -64,5 +64,5 @@ $color$stippled_hr
 ${alignc}WiFi
 Essid: ${color white}${wireless_essid wlan0} ${alignr}${color}pwr: ${color white}${wireless_link_qual_perc wlan0}%
 #${wireless_link_bar 5,50 wlan0}
-${downspeedgraph}
+${alignc}${downspeedgraph wlan0 20,200 000000 ffffff -t}
 ${color}Down: ${color white}${downspeedf wlan0}KBs ${color}${alignr}Up: ${color white}${upspeedf wlan0}KBs
